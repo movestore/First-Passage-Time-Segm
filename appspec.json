@@ -1,0 +1,62 @@
+{
+  "settings": [
+    {
+      "id": "radius",
+      "name": "Radius parameter for First Passage Time",
+      "description": "Define the radius for which you want to calculate the first passage times (when does an animal pass the radius). Unit = m. Default 30000 m = 30 km",
+      "defaultValue": 30000,
+      "type": "DOUBLE"
+    },
+	{
+      "id": "time_thr",
+      "name": "Threshold time for migration/resting",
+      "description": "Define the time threshold with which you want to split your track into migration and resting locations. It is the time that your animals at least need to pass the given radius if resting. Unit = days. Default = 10 days",
+      "defaultValue": 10,
+      "type": "DOUBLE"
+    }
+  ],
+  "dependencies": {
+    "R": [
+      {
+        "name": "move"
+      },
+      {
+        "name": "ggmap"
+      },
+	        {
+        "name": "adehabitatLT"
+      },
+	        {
+        "name": "shiny"
+      },
+	        {
+        "name": "leaflet"
+      }
+    ]
+  },
+  "license": {
+    "key": "MIT"
+  },
+  "language": "eng",
+  "keywords": [
+    "first passage time",
+    "FPT",
+    "segmentation",
+    "map"
+  ],
+  "people": [
+    {
+      "firstName": "Andrea",
+      "middleInitials": null,
+      "lastName": "Kölzsch",
+      "email": "akoelzsch@ab.mpg.de",
+      "roles": ["author", "creator"],
+      "orcid": "0000-0003-0193-1563",
+      "affiliation": "Max-Planck-Institute of Animal Behavior",
+      "affiliationRor": "https://ror.org/026stee22"
+    }
+  ],
+  "documentation" : {
+    "url": "https://github.com/movestore/First-Passage-Time-Segm/blob/main/README.md"
+  }
+}
