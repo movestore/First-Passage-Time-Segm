@@ -31,6 +31,9 @@
       },
 	        {
         "name": "leaflet"
+      },
+			{
+        "name": "DT"
       }
     ]
   },

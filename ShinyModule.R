@@ -3,6 +3,7 @@ library('ggmap')
 library('adehabitatLT')
 library('shiny')
 library('leaflet')
+library('DT')
 
 Sys.setenv(tz="GMT") 
 
