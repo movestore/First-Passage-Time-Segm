@@ -4,6 +4,7 @@ library('adehabitatLT')
 library('shiny')
 library('leaflet')
 library('DT')
+library('foreach')
 
 Sys.setenv(tz="GMT") 
 
@@ -15,7 +16,7 @@ shinyModuleUserInterface <- function(id, label, radius, time_thr) {
 
     sliderInput(inputId = ns("time_thr"), 
         label = "Time threshold for passing out of radius (unit = days) to split movement from resting", 
-        value = time_thr, min = 0, max = 365),
+        value = time_thr, min = 0, max = 50),
 
     div(id=ns("C"),class='shiny-input-radiogroup',DT::dataTableOutput(ns("foo"))),
     

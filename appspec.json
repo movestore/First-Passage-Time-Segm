@@ -34,6 +34,9 @@
       },
 			{
         "name": "DT"
+      },
+			{
+        "name": "foreach"
       }
     ]
   },
