@@ -6,7 +6,7 @@ library('leaflet')
 library('DT')
 library('foreach')
 
-Sys.setenv(tz="GMT") 
+Sys.setenv(tz="UTC") 
 
 shinyModuleUserInterface <- function(id, label, radius, time_thr) {
   ns <- NS(id)
