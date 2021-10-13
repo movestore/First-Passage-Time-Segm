@@ -10,7 +10,7 @@
 	{
       "id": "time_thr",
       "name": "Threshold time for migration/resting",
-      "description": "Define the time threshold with which you want to split your track into migration and resting locations. It is the time that your animals at least need to pass the given radius if resting. Unit = days. Default = 10 days",
+      "description": "Define the time threshold with which you will split your tracks into migration and resting locations. This is the minimum time your animals need to pass a given radius (above) if resting. Unit = days. Default = 10 days.",
       "defaultValue": 10,
       "type": "DOUBLE"
     }
