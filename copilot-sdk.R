@@ -24,6 +24,7 @@ if(file.exists("configuration.json")) {
 # Add your arguments of your r function here
 args[["radius"]] = 30000
 args[["time_thr"]] = 10
+args[["thr_uni"]] = "hours" #seconds", "hours", "days" possible
 
 #################################################################
 #################################################################
