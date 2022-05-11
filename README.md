@@ -5,7 +5,7 @@ MoveApps
 Github repository: *github.com/movestore/First-Passage-Time-Segm*
 
 ## Description
-This App calculated the first passage time of all individual tracks. Depending on a time threshold, a map overview indicates for each animal which locations lie below (migration) and above (resting) such a time.
+This App calculated the first passage time of all individual tracks. Depending on a time threshold, a map overview indicates for each animal which locations lie below (fast movement) and above (slow movement/resting) such a time.
 
 ## Documentation
 Given one radius distance, this App calculated for each location of each animal the time it needs to cross this radius, i.e. the first passage time (FPT). This App uses the fpt() function from the adehabitatLT package.
