@@ -14,7 +14,7 @@ For each animals it is possible to plot the FPT for each location with a time th
 
 Depending on the time threshold, this App annotates each location with NA (not possible to calculate FPT), fast movement (low FPT) and slow movement/resting (high FPT). On a map the track of a selected animals is plotted together with the locations in their respective colour (NA is omitted).
 
-For each location, the fpt value and behaviour (fast/slow movement) are annotated and returned in the output rds data set. That way they can be used in subsequent Apps, including csv file creating (rds2csv App) or shapfile creation (Write Shapefile).
+For each location, the fpt value and behaviour (fast/slow movement) are annotated and returned in the output rds data set in the columns named "fpt_value" and "fpt_behaviour" respectively. That way they can be used in subsequent Apps, including csv file creating (rds2csv App) or shapfile creation (Write Shapefile).
 
 ### Input data
 moveStack in Movebank format
@@ -27,17 +27,17 @@ Shiny user interface (UI)
 none
 
 ### Parameters 
-`radius`: Defined radius the animal has to cross for first passage. Unit: `metres`. Default 30000 m = 30 km.
+`Radius parameter for First Passage Time`: Define the radius for which you want to calculate the first passage times (when does an animal pass the radius). Unit: `metres`. Default 30000 m = 30 km.
 
-`time_thr`: Time threshold of the FPT to define migration/resting. This value can be adapted interactively. Selected unit below. Default 10 (days).
+`Threshold time for migration/resting`: Define the time threshold with which you will split your tracks into fast and slow movement locations. This is the minimum time your animals need to pass a given radius (above) if resting. Select your time unit below. Default 10 (days).
 
-`thr_uni`: Threshold time unit. Possible values `seconds`, `hours`, and `days`. Default `days`.
+`Unit of the threshold time`: Select the time unit of your selected threshold time. Possible values `seconds`, `hours`, and `days`. Default `days`.
 
 ### Null or error handling:
-**Parameter `radius`:** A default of 30 km is provided, but can be changed to NULL, which will lead to an error. Take care to relate this parameter to the extent of your data set. If the radius is too large for the data set then all FPT values will be NA. If the radius is too small then FPTs will be extremely short. Negative values will not be tolerated and lead to an error.
+**Parameter `Radius parameter for First Passage Time`:** A default of 30 km is provided, but can be changed to NULL, which will lead to an error. Take care to relate this parameter to the extent of your data set. If the radius is too large for the data set then all FPT values will be NA. If the radius is too small then FPTs will be extremely short. Negative values will not be tolerated and lead to an error.
 
-**Parameter `time_thr`:** The time threshold has to be positive and not NULL, a default of 10 days is provided. By shifting the slider in the UI, this parameter can be changed, but only to integer values. Initial values can be double. Negative values are not tolerated and lead to an error.
+**Parameter `Threshold time for migration/resting`:** The time threshold has to be positive and not NULL, a default of 10 days is provided. By shifting the slider in the UI, this parameter can be changed, but only to integer values. Initial values can be double. Negative values are not tolerated and lead to an error.
 
-**Parameter `thr_uni`:** Radiobuttons with three possible values and default (see above). No null or error possibilities.
+**Parameter `Unit of the threshold time`:** Radiobuttons with three possible values and default (see above). No null or error possibilities.
 
-**Data:** The data are not manipulated in this App, but interactively explored. So that a possible Workflow can be continued after this App, the input data set is returned.
+**Data:** The data are not manipulated in this App, but interactively explored. So that a possible Workflow can be continued after this App, the input data set is returned with the columns "fpt_value" and "fpt_behaviour" appended.
