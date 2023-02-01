@@ -1,41 +1,5 @@
 {
-  "settings": [
-    {
-      "id": "radius",
-      "name": "Radius parameter for First Passage Time",
-      "description": "Define the radius for which you want to calculate the first passage times (when does an animal pass the radius). Unit = m. Default 30000 m = 30 km",
-      "defaultValue": 30000,
-      "type": "DOUBLE"
-    },
-	{
-      "id": "time_thr",
-      "name": "Threshold time for migration/resting",
-      "description": "Define the time threshold with which you will split your tracks into fast and slow movement locations. This is the minimum time your animals need to pass a given radius (above) if resting. Select your time unit below. Default = 10 (days).",
-      "defaultValue": 10,
-      "type": "DOUBLE"
-    },
-	{
-      "id": "thr_uni",
-      "name": "Unit of your threshold time",
-      "description": "Select the time unit of your selected threshold time.",
-      "defaultValue": "days",
-      "type": "RADIOBUTTONS",
-      "options": [
-		{
-          "value": "seconds",
-          "displayText": "seconds"
-        },
-		{
-          "value": "hours",
-          "displayText": "hours"
-        },
-		{
-          "value": "days",
-          "displayText": "days"
-        }
-      ]
-	}
-  ],
+  "settings": [],
   "dependencies": {
     "R": [
       {
@@ -58,6 +22,9 @@
       },
 			{
         "name": "foreach"
+      },
+			{
+        "name": "shinyBS"
       }
     ]
   },
