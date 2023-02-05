@@ -33,6 +33,8 @@ none
 
 `Unit of the threshold time`: Select the time unit of your selected threshold time. Possible values `seconds`, `hours`, and `days`. Default `days`.
 
+`Start/Update calculation`: after customizing or changing any of the parameters above, hit this button to do the calculation using the new input.
+
 ### Null or error handling:
 **Parameter `Radius parameter for First Passage Time`:** A default of 30 km is provided, but can be changed to NULL, which will lead to an error. Take care to relate this parameter to the extent of your data set. If the radius is too large for the data set then all FPT values will be NA. If the radius is too small then FPTs will be extremely short. Negative values will not be tolerated and lead to an error.
 
