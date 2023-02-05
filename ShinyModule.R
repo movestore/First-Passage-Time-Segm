@@ -30,7 +30,7 @@ shinyModuleUserInterface <- function(id, label) {
       
       column(3,uiOutput(ns("sliderOption"))),
       
-      column(3,actionButton(ns("goButton"),"Start calculation / Update")),
+      column(3,actionButton(ns("goButton"),"Start/Update calculation")),
     ),
     div(id=ns("C"),class='shiny-input-radiogroup',DT::dataTableOutput(ns("foo"))),
     
