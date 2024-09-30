@@ -1,12 +1,14 @@
 {
-  "settings": [],
+  "version": "1.2",
+  "settings": [
+  ],
   "dependencies": {
     "R": [
       {
-        "name": "move"
+        "name": "move2"
       },
       {
-        "name": "ggmap"
+        "name": "sf"
       },
 	        {
         "name": "adehabitatLT"
@@ -14,10 +16,10 @@
 	        {
         "name": "shiny"
       },
-	        {
-        "name": "leaflet"
+      {
+        "name": "move2"
       },
-			{
+	{
         "name": "DT"
       },
 			{
@@ -25,10 +27,22 @@
       },
 			{
         "name": "shinyBS"
+      },
+	        {
+        "name": "leaflet.extras"
+      },
+			{
+        "name": "htmlwidgets"
+      },
+			{
+        "name": "mapview"
+      },
+			{
+        "name": "pals"
       }
     ]
   },
-  "license": {
+ "license": {
     "key": "MIT"
   },
   "language": "eng",
@@ -60,8 +74,5 @@
   "affiliation": "Max-Planck-Institute of Animal Behavior",
   "affiliationRor": "https://ror.org/026stee22"
 }
-  ],
-  "documentation" : {
-    "url": "https://github.com/movestore/First-Passage-Time-Segm/blob/main/README.md"
-  }
+  ]
 }
