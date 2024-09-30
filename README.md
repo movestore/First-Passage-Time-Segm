@@ -18,6 +18,7 @@ Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to th
 
 This App was developed using data of birds. 
 
+<<<<<<< Updated upstream
 This App was developed using data of red deer. 
 
 This App was developed for any taxonomic group. 
@@ -44,6 +45,17 @@ The App should work for any kind of (location) data.
 *Indicate which type of output data the App produces to be passed on to subsequent Apps.*
 
 *Example:* `move2::move2_loc`
+=======
+### Application scope
+This App was developed using data of migratory birds, extracting stopover sites. However, it should work on all scales of metres and above. 
+
+
+### Input data
+move2::move2_loc
+
+### Output data
+move2::move2_loc
+>>>>>>> Stashed changes
 
 ### Artefacts
 *If the App creates artefacts (e.g. csv, pdf, jpeg, shapefiles, etc), please list them here and describe each.*
@@ -58,8 +70,24 @@ The App should work for any kind of (location) data.
 *Always include the "Store settings" setting as it will appear automatically in all shiny apps*
 `Store settings`: click to store the current settings of the App for future Workflow runs. 
 
+<<<<<<< Updated upstream
 ### Changes in output data
 *Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means.*
+=======
+`Start/Update calculation`: for the initial calculation as well as rerunning after customizing or changing any of the parameters above, hit this button to do the calculation using the (new) input.
+
+`Save Map as HTML`: click to store the current map as html file. 
+
+`Store settings`: click to store the current settings of the App for future Workflow runs. 
+
+### Changes in output data
+In most cases, the App returns the input data with first passage time (attribute `fpt_value`) and first passage time behaviour indicator (attribute `fpt_behaviour`) for each location. If first passage times cannot be calculated or do not fall into any of the categories, the input data set is returned.
+
+### Most common errors
+If you cannot see any output of the App, please hit to button `Start/Update calculation`.
+
+For other recurring errors, please make an issue on the Github page of this App.
+>>>>>>> Stashed changes
 
 *Examples:*
 
@@ -67,6 +95,7 @@ The App adds to the input data the columns `Max_dist` and `Avg_dist`. They conta
 
 The App filterers the input data as selected by the user. 
 
+<<<<<<< Updated upstream
 The output data is the outcome of the model applied to the input data. 
 
 The input data remains unchanged.
@@ -78,3 +107,8 @@ The input data remains unchanged.
 *Please indicate for each setting as well as the input data which behaviour the App is supposed to show in case of errors or NULL values/input. Please also add notes of possible errors that can happen if settings/parameters are improperly set and any other important information that you find the user should be aware of.*
 
 *Example:* **Setting `radius`:** If no radius AND no duration are given, the input data set is returned with a warning. If no radius is given (NULL), but a duration is defined then a default radius of 1000m = 1km is set. 
+=======
+**Data:** The data are not manipulated in this App, but interactively explored. So that a possible Workflow can be continued after this App, the input data set is returned with the columns "fpt_value" and "fpt_behaviour" appended.
+
+
+>>>>>>> Stashed changes

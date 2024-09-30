@@ -11,13 +11,48 @@
   "dependencies": {
     "R": [
       {
+<<<<<<< Updated upstream
+=======
+        "name": "move2"
+      },
+      {
+        "name": "sf"
+      },
+	        {
+        "name": "adehabitatLT"
+      },
+	        {
+>>>>>>> Stashed changes
         "name": "shiny"
       },
       {
         "name": "move2"
       },
+<<<<<<< Updated upstream
       {
         "name": "sf"
+=======
+			{
+        "name": "DT"
+      },
+			{
+        "name": "foreach"
+      },
+			{
+        "name": "shinyBS"
+      },
+	        {
+        "name": "leaflet.extras"
+      },
+			{
+        "name": "htmswidgets"
+      },
+			{
+        "name": "mapview"
+      },
+			{
+        "name": "pals"
+>>>>>>> Stashed changes
       }
     ]
   },
@@ -39,6 +74,7 @@
     {
       "firstName": "Charles",
       "middleInitials": null,
+<<<<<<< Updated upstream
       "lastName": "Darwin",
       "email": "creator@example.com",
       "roles": [
@@ -62,5 +98,24 @@
       "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
       "url": "https://anylink.xyz"
     }
+=======
+      "lastName": "Kölzsch",
+      "email": "akoelzsch@ab.mpg.de",
+      "roles": ["author", "creator"],
+      "orcid": "0000-0003-0193-1563",
+      "affiliation": "Max-Planck-Institute of Animal Behavior",
+      "affiliationRor": "https://ror.org/026stee22"
+    },
+{
+  "firstName": "Anne",
+  "middleInitials": "K",
+  "lastName": "Scharf",
+  "email": "ascharf@ab.mpg.de",
+  "roles": ["contributor"],
+  "orcid": "0000-0002-3357-8533",
+  "affiliation": "Max-Planck-Institute of Animal Behavior",
+  "affiliationRor": "https://ror.org/026stee22"
+}
+>>>>>>> Stashed changes
   ]
 }
