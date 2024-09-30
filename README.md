@@ -1,45 +1,80 @@
-# First Passage Time Segmentation
+# Name of App *(Give your app a short and informative title. Please adhere to our convention of Title Case without hyphens (e.g. My New App))*
 
 MoveApps
 
-Github repository: *github.com/movestore/First-Passage-Time-Segm*
+Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to the repository where the code of the App can be found)*
 
 ## Description
-This App calculated the first passage time of all individual tracks. Depending on a time threshold, a map overview indicates for each animal which locations lie below (fast movement) and above (slow movement/resting) such a time.
+*Enter here the short description of the App that might also be used when filling out the description during App submission to MoveApps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
 
 ## Documentation
-Given one radius distance, this App calculated for each location of each animal the time it needs to cross this radius, i.e. the first passage time (FPT). This App uses the fpt() function from the adehabitatLT package.
+*Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes. You might also refer to the sections below.*
 
-For each animals it is possible to plot the FPT for each location with a time threshold line. This time threshold has to be initially defined and can be adapted in the User Interface (Shiny UI).
+### Application scope
+#### Generality of App usability
+*State here if the App was developed for a specific species, taxon or taxonomic group, or to answer a specific question. How might it influence the scope and utility of the App. This information will help the user to understand why the App might be producing no or odd results.*
 
-Depending on the time threshold, this App annotates each location with NA (not possible to calculate FPT), fast movement (low FPT) and slow movement/resting (high FPT). On a map the track of a selected animals is plotted together with the locations in their respective colour (NA is omitted).
+*Examples:*
 
-For each location, the fpt value and behaviour (fast/slow movement) are annotated and returned in the output rds data set in the columns named "fpt_value" and "fpt_behaviour" respectively. That way they can be used in subsequent Apps, including csv file creating (rds2csv App) or shapfile creation (Write Shapefile).
+This App was developed using data of birds. 
 
-### Input data
-moveStack in Movebank format
+This App was developed using data of red deer. 
 
-### Output data
-moveStack in Movebank format
-Shiny user interface (UI)
+This App was developed for any taxonomic group. 
+
+This App was developed to identify kill sites, but can probably be used to identify any kind of location clusters like nests, dens or drinking holes.
+
+#### Required data properties
+*State here the required and/or optimal data properties for this App to perform properly.*
+
+*Examples:*
+
+This App is only applicable to data that reflect range resident behavior. 
+
+The data should have a fix rate of at least 1 location per 30 minutes. 
+
+The App should work for any kind of (location) data.
+
+### Input type
+*Indicate which type of input data the App requires.*
+
+*Example*: `move2::move2_loc`
+
+### Output type
+*Indicate which type of output data the App produces to be passed on to subsequent Apps.*
+
+*Example:* `move2::move2_loc`
 
 ### Artefacts
-none
+*If the App creates artefacts (e.g. csv, pdf, jpeg, shapefiles, etc), please list them here and describe each.*
+
+*Example:* `rest_overview.csv`: csv-file with Table of all rest site properties
 
 ### Settings 
-`Radius parameter for First Passage Time`: Define the radius for which you want to calculate the first passage times (when does an animal pass the radius). Unit: `metres`. Default 30000 m = 30 km.
+*Please list and define all settings that the App requires to be set by the App user, if necessary including their unit. Please state each of the settings that the user will encounter in the UI of the shiny app.*
 
-`Threshold time for migration/resting`: Define the time threshold with which you will split your tracks into fast and slow movement locations. This is the minimum time your animals need to pass a given radius (above) if resting. Select your time unit below. Default 10 (days).
+*Example:* `Radius of resting site` (radius): Defined radius the animal has to stay in for a given duration of time for it to be considered resting site. Unit: `metres`.
 
-`Unit of the threshold time`: Select the time unit of your selected threshold time. Possible values `seconds`, `hours`, and `days`. Default `days`.
+*Always include the "Store settings" setting as it will appear automatically in all shiny apps*
+`Store settings`: click to store the current settings of the App for future Workflow runs. 
 
-`Start/Update calculation`: after customizing or changing any of the parameters above, hit this button to do the calculation using the new input.
+### Changes in output data
+*Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means.*
 
-### Null or error handling:
-**Setting `Radius parameter for First Passage Time`:** A default of 30 km is provided, but can be changed to NULL, which will lead to an error. Take care to relate this parameter to the extent of your data set. If the radius is too large for the data set then all FPT values will be NA. If the radius is too small then FPTs will be extremely short. Negative values will not be tolerated and lead to an error.
+*Examples:*
 
-**Setting `Threshold time for migration/resting`:** The time threshold has to be positive and not NULL, a default of 10 days is provided. By shifting the slider in the UI, this parameter can be changed, but only to integer values. Initial values can be double. Negative values are not tolerated and lead to an error.
+The App adds to the input data the columns `Max_dist` and `Avg_dist`. They contain the maximum distance to the provided focal location and the average distance to it over all locations. 
 
-**Setting `Unit of the threshold time`:** Radiobuttons with three possible values and default (see above). No null or error possibilities.
+The App filterers the input data as selected by the user. 
 
-**Data:** The data are not manipulated in this App, but interactively explored. So that a possible Workflow can be continued after this App, the input data set is returned with the columns "fpt_value" and "fpt_behaviour" appended.
+The output data is the outcome of the model applied to the input data. 
+
+The input data remains unchanged.
+
+### Most common errors
+*Please describe shortly what most common errors of the App can be, how they occur and best ways of solving them.*
+
+### Null or error handling
+*Please indicate for each setting as well as the input data which behaviour the App is supposed to show in case of errors or NULL values/input. Please also add notes of possible errors that can happen if settings/parameters are improperly set and any other important information that you find the user should be aware of.*
+
+*Example:* **Setting `radius`:** If no radius AND no duration are given, the input data set is returned with a warning. If no radius is given (NULL), but a duration is defined then a default radius of 1000m = 1km is set. 
