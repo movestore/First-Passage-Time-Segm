@@ -15,6 +15,7 @@ library("shinyBS")
 shinyModuleUserInterface <- function(id, label) {
   # all IDs of UI functions need to be wrapped in ns()
   ns <- NS(id)
+<<<<<<< Updated upstream
    tagList(
      titlePanel("First Passage Time Segmentation"),
      fluidRow(
@@ -72,6 +73,7 @@ shinyModule <- function(input, output, session, data) {
     dataiANN <- foreach(datai = data.split) %do%
       {
         naam <- unique(mt_track_id(datai))
+<<<<<<< Updated upstream
         datai <- cbind(datai,"fpt_value"=mfpt[[which(names(mfpt)==naam)]]$fpt_val)
         
         datai$fpt_behaviour <- NA
