@@ -1,18 +1,10 @@
 {
   "version": "1.2",
   "settings": [
-    {
-      "id": "auxiliary-file-a",
-      "name": "Personalization",
-      "description": "You can personalize the app by providing a file",
-      "type": "USER_FILE"
-    }
   ],
   "dependencies": {
     "R": [
       {
-<<<<<<< Updated upstream
-=======
         "name": "move2"
       },
       {
@@ -22,17 +14,12 @@
         "name": "adehabitatLT"
       },
 	        {
->>>>>>> Stashed changes
         "name": "shiny"
       },
       {
         "name": "move2"
       },
-<<<<<<< Updated upstream
-      {
-        "name": "sf"
-=======
-			{
+	{
         "name": "DT"
       },
 			{
@@ -45,60 +32,31 @@
         "name": "leaflet.extras"
       },
 			{
-        "name": "htmswidgets"
+        "name": "htmlwidgets"
       },
 			{
         "name": "mapview"
       },
 			{
         "name": "pals"
->>>>>>> Stashed changes
       }
     ]
   },
-  "providedAppFiles": [
-    {
-      "settingId": "auxiliary-file-a",
-      "from": "data/auxiliary/user-files/provided-app-files/auxiliary-file-a/sample.txt"
-    }
-  ],
-  "license": {
+ "license": {
     "key": "MIT"
   },
   "language": "eng",
   "keywords": [
-    "example",
-    "template"
+    "first passage time",
+    "FPT",
+    "segmentation",
+    "map",
+    "shiny"
   ],
   "people": [
     {
-      "firstName": "Charles",
+      "firstName": "Andrea",
       "middleInitials": null,
-<<<<<<< Updated upstream
-      "lastName": "Darwin",
-      "email": "creator@example.com",
-      "roles": [
-        "author",
-        "creator"
-      ],
-      "orcid": null,
-      "affiliation": null,
-      "affiliationRor": null
-    }
-  ],
-  "funding": [
-    {
-      "name": "funder name",
-      "comment": "grant for App"
-    }
-  ],
-  "references": [
-    {
-      "type": "IsDescribedBy",
-      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-      "url": "https://anylink.xyz"
-    }
-=======
       "lastName": "Kölzsch",
       "email": "akoelzsch@ab.mpg.de",
       "roles": ["author", "creator"],
@@ -116,6 +74,5 @@
   "affiliation": "Max-Planck-Institute of Animal Behavior",
   "affiliationRor": "https://ror.org/026stee22"
 }
->>>>>>> Stashed changes
   ]
 }

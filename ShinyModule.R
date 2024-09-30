@@ -1,10 +1,6 @@
 library("shiny")
 library("move2")
 library("sf")
-<<<<<<< Updated upstream
-library('ggmap')
-=======
->>>>>>> Stashed changes
 library('adehabitatLT')
 library('leaflet')
 library('DT')
@@ -15,10 +11,7 @@ library("htmlwidgets")
 library("mapview")
 library("pals")
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 # to display messages to the user in the log file of the App in MoveApps
 # one can use the function from the src/common/logger.R file:
 # logger.fatal(), logger.error(), logger.warn(), logger.info(), logger.debug(), logger.trace()
@@ -26,31 +19,7 @@ library("pals")
 shinyModuleUserInterface <- function(id, label) {
   # all IDs of UI functions need to be wrapped in ns()
   ns <- NS(id)
-<<<<<<< Updated upstream
-   tagList(
-     titlePanel("First Passage Time Segmentation"),
-     fluidRow(
-       column(3,numericInput(ns("radius"), label="Radius parameter for First Passage Time", value=30000),
-              bsTooltip(id=ns("radius"), title="Define the radius for which you want to calculate the first passage times (when does an animal pass the radius). Unit = m.", placement = "bottom", trigger = "hover", options = list(container = "body")),
-              
-              numericInput(ns("time_thr"),label="Threshold time for migration/resting", value=10),
-              bsTooltip(id=ns("time_thr"), title="Define the time threshold with which you will split your tracks into fast and slow movement locations. This is the minimum time your animals need to pass a given radius (above) if resting. Select your time unit below.", placement = "bottom", trigger = "hover", options = list(container = "body")),
-              
-              selectInput(ns("thr_uni"), label="Unit of the threshold time", choices=c("seconds", "hours","days"),selected="days"),
-              bsTooltip(id=ns("thr_uni"), title="Select the time unit of your selected threshold time.", placement = "bottom", trigger = "hover", options = list(container = "body"))),
-       
-       column(3,uiOutput(ns("sliderOption"))),
-       
-       column(3,actionButton(ns("goButton"),"Start/Update calculation")),
-     ),
-     div(id=ns("C"),class='shiny-input-radiogroup',DT::dataTableOutput(ns("foo"))),
-     
-     fluidRow(
-       column(width=5, plotOutput(ns("fpt"),height="500px")),
-       column(width=7, leafletOutput(ns("leafmap"),height="500px"))
-     )
-   )
-=======
+
   tagList(
     titlePanel("First Passage Time Segmentation"),
     fluidRow(
@@ -73,23 +42,14 @@ shinyModuleUserInterface <- function(id, label) {
       column(3,downloadButton(ns('saveMap'), 'Save Map as Html'))
     )
   )
->>>>>>> Stashed changes
+
 }
 
 # The parameter "data" is reserved for the data object passed on from the previous app
 shinyModule <- function(input, output, session, data) {
   ns <- session$ns
   current <- reactiveVal(data)
-<<<<<<< Updated upstream
-  
-  output$sliderOption <-renderUI({
-    sliderInput(inputId = ns("time_thr"), 
-                label = paste("Time threshold for passing out of",input$radius,"m radius (unit =",input$thr_uni,") to split fast movement from slow movement/resting"), 
-                value = input$time_thr, min = 0, max = input$time_thr*5)
-  })
-=======
->>>>>>> Stashed changes
-  
+
   currentANN <- reactiveVal() ## before hitting the go button, this object is empty, the input dataset will be saved as output
   
   observeEvent(input$goButton, {
@@ -111,24 +71,17 @@ shinyModule <- function(input, output, session, data) {
     dataiANN <- foreach(datai = data.split) %do%
       {
         naam <- unique(mt_track_id(datai))
-<<<<<<< Updated upstream
-        datai <- cbind(datai,"fpt_value"=mfpt[[which(names(mfpt)==naam)]]$fpt_val)
-=======
+
         datai$fpt_value <- mfpt[[which(names(mfpt)==naam)]]$fpt_val
->>>>>>> Stashed changes
-        
         datai$fpt_behaviour <- NA
         datai$fpt_behaviour[datai$fpt_value>input$time_thr] <- "slow"
         datai$fpt_behaviour[datai$fpt_value<=input$time_thr] <- "fast"
         datai
       }
     
-<<<<<<< Updated upstream
-    currentANN(mt_stack(dataiANN,track_combine="rename"))
-=======
+
     currentANN(mt_stack(dataiANN)) #mt_stack() runs into error if "rename"
->>>>>>> Stashed changes
-    
+
     ids <- names(data.split)
     time0 <- foreach(datai = data.split, .combine=c) %do% {
       as.character(min(mt_time(datai)))
@@ -184,11 +137,8 @@ shinyModule <- function(input, output, session, data) {
         abline(h=input$time_thr,col="blue",lwd=2)
       })
       
-<<<<<<< Updated upstream
-      output$leafmap <- renderLeaflet({
-=======
+
       mmap <- reactive({
->>>>>>> Stashed changes
         bounds <- as.vector(st_bbox(data_sel))
         outl <- leaflet() %>%
           fitBounds(bounds[1], bounds[2], bounds[3], bounds[4]) %>%
